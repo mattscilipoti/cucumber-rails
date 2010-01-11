@@ -24,7 +24,7 @@ if defined?(ActiveRecord::Base)
     if Cucumber::Rails::World.use_transactional_fixtures
       run_callbacks :teardown if respond_to?(:run_callbacks)
     else
-      DatabaseCleaner.clean
+#      DatabaseCleaner.clean
     end
   end
 else
