@@ -1,3 +1,4 @@
+puts 'INFO: Using mattscilipoti_cucumber-rails -v0.2.4'
 if defined?(ActiveRecord::Base)
   Before do
     $__cucumber_global_use_txn = !!Cucumber::Rails::World.use_transactional_fixtures if $__cucumber_global_use_txn.nil?
@@ -24,7 +25,7 @@ if defined?(ActiveRecord::Base)
     if Cucumber::Rails::World.use_transactional_fixtures
       run_callbacks :teardown if respond_to?(:run_callbacks)
     else
-      DatabaseCleaner.clean unless ENV['TXN'] =~ /false/i
+      DatabaseCleaner.clean if Cucumber::Rails::World.clean_database_after
     end
   end
 else
