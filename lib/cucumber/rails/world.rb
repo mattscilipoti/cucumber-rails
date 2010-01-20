@@ -33,9 +33,10 @@ module Cucumber #:nodoc:
     class World < ActionController::IntegrationTest
       include ActiveSupport::Testing::SetupAndTeardown if ActiveSupport::Testing.const_defined?("SetupAndTeardown")
       cattr_accessor :clean_database_after
+      World.clean_database_after = true
+
       def initialize #:nodoc:
         @_result = Test::Unit::TestResult.new
-        World.clean_database_after = true
       end
     end
   end
