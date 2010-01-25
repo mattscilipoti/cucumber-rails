@@ -1,4 +1,4 @@
-puts 'INFO: Using mattscilipoti_cucumber-rails -v0.2.4'
+puts 'INFO: Using mattscilipoti-cucumber-rails -v0.2.4'
 if defined?(ActiveRecord::Base)
   Before do
     $__cucumber_global_use_txn = !!Cucumber::Rails::World.use_transactional_fixtures if $__cucumber_global_use_txn.nil?
