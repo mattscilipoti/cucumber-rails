@@ -1,5 +1,11 @@
-== In Git
 
+== 0.2.4.1 2010-01-26 (mattscilipoti)
+=== New Features
+ * Add some Debug support:
+   * Cucumber::Rails::World.clean_database_after (boolean)
+   * Clean database in Before
+
+== In Git
 === Bugfixes
 * Fixed typos in Capybara's web steps (has_not_xpath? => has_no_xpath?) (Thorbjørn Hermansen, Carlos Antonio da Silva)
 
@@ -64,11 +70,11 @@ and to celebrate that cucumber-rails now supports Capybara as an alternative to 
    in a temporary file and reapply after you have overwritten the file. ALso consider
    adding your custom code to another file that won't be overwritten the next time
    you upgrade.
-   
+
    Many people have edits in their env.rb file. This is something you should try
    to avoid in the future. Instead, keep your custom setup in a different file
    under features/support - Cucumber loads all files under features/**/*.rb anyway.
-   
+
    If you have a Spork setup, see the end of this thread:
    http://groups.google.com/group/cukes/browse_thread/thread/475385cc26377215
 
