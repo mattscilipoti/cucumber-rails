@@ -13,6 +13,7 @@ if defined?(ActiveRecord::Base)
   end
 
   Before do
+    DatabaseCleaner.clean #WORKAROUND: transactional mysql does not reset pk seed unless 'cleaned'
     if Cucumber::Rails::World.use_transactional_fixtures
       run_callbacks :setup if respond_to?(:run_callbacks)
     else
