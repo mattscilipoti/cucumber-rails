@@ -38,6 +38,10 @@ module Cucumber #:nodoc:
       def initialize #:nodoc:
         @_result = Test::Unit::TestResult.new
       end
+
+      def self.version
+        IO.read(File.expand_path(File.dirname(__FILE__) + '/../../../VERSION')).chomp
+      end
     end
   end
 end
@@ -45,3 +49,4 @@ end
 World do
   Cucumber::Rails::World.new
 end
+puts 'INFO: Using mattscilipoti-cucumber-rails -v' + Cucumber::Rails::World.version
